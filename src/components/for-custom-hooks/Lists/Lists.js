@@ -14,7 +14,7 @@ const Lists = () => {
         <h2>Photo Items</h2>
         <ul className={styles.lists}>
           {photsList.map((list) => (
-            <List list={list} />
+            <List key={list.id} list={list} />
           ))}
         </ul>
       </div>
@@ -22,7 +22,7 @@ const Lists = () => {
         <h2>User Lists</h2>
         <ul className={styles.lists}>
           {userList.map((list) => (
-            <List list={list} />
+            <List key={list.id} list={list} />
           ))}
         </ul>
       </div>
