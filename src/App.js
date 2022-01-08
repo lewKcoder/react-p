@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import styles from './App.module.scss';
 import Header from './components//commons/Header/Header';
 import Lists from './components/for-custom-hooks/Lists/Lists';
+import Todo from './components/todo/Todo/Todo';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Top />} />
-            <Route path="/customhooks-p" element={<Lists />} />
+            <Route path="/for-custom-hooks" element={<Lists />} />
+            <Route path="/todo" element={<Todo />} />
           </Routes>
         </BrowserRouter>
       </div>
@@ -27,8 +29,11 @@ function Top() {
     <div className={styles.App_header}>
       <img src={logo} className={styles.App_logo} alt="logo" />
       <p>lets react!!!!</p>
-      <Link className={styles.App_link} to="/customhooks-p">
+      <Link className={styles.App_link} to="/for-custom-hooks">
         custom hooks
+      </Link>
+      <Link className={styles.App_link} to="/todo">
+        todo
       </Link>
     </div>
   );

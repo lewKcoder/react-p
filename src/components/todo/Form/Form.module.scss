@@ -1,0 +1,17 @@
+.input {
+  height: 24px;
+  width: 50%;
+  margin-right: 8px;
+}
+.button {
+  background-color: #282c34;
+  color: #61dafb;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  padding: 4px 16px;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.7;
+  }
+}
