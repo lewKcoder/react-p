@@ -1,0 +1,13 @@
+.list {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .title {
+    flex-grow: 1;
+    font-weight: bold;
+  }
+  .img {
+    width: 50%;
+  }
+}

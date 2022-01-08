@@ -1,25 +1,31 @@
 import logo from './logo.svg';
-import './App.css';
+import styles from './App.module.scss';
+import Lists from './components/custom-hooks/Lists/Lists';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.App}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Top />} />
+          <Route path="/list" element={<Lists />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
 
 export default App;
+
+function Top() {
+  return (
+    <div className={styles.App_header}>
+      <img src={logo} className={styles.App_logo} alt="logo" />
+      <p>lets react!!!!</p>
+      <Link className={styles.App_link} to="/list">
+        list
+      </Link>
+    </div>
+  );
+}
