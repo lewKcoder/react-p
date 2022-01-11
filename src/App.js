@@ -3,6 +3,7 @@ import styles from './App.module.scss';
 import Header from './components//commons/Header/Header';
 import Lists from './components/for-custom-hooks/Lists/Lists';
 import Todo from './components/todo/Todo/Todo';
+import UseReducer from './components/useReducer/UseReducer';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
             <Route path="/" element={<Top />} />
             <Route path="/for-custom-hooks" element={<Lists />} />
             <Route path="/todo" element={<Todo />} />
+            <Route path="/use-reducer" element={<UseReducer />} />
           </Routes>
         </BrowserRouter>
       </div>
@@ -34,6 +36,9 @@ function Top() {
       </Link>
       <Link className={styles.App_link} to="/todo">
         todo
+      </Link>
+      <Link className={styles.App_link} to="/use-reducer">
+        useReducer
       </Link>
     </div>
   );
