@@ -23,7 +23,7 @@ const calcReducer = (state, action) => {
       };
     case 'subtraction':
       return {
-        initialNumber: state.initialNumber + 1,
+        initialNumber: state.initialNumber - 1,
         calculation: '-',
       };
     case 'multiplication':
