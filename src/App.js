@@ -6,6 +6,7 @@ import Todo from './components/todo/Todo/Todo';
 import UseReducer from './components/useReducer/UseReducer';
 import UseRef from './components/useRef/UseRef';
 import UseLayoutEffect from './components/useLayoutEffect/UseLayoutEffect';
+import MarubatsuGame from './components/marubatsuGame/MarubatsuGame';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path="/use-reducer" element={<UseReducer />} />
             <Route path="/use-ref" element={<UseRef />} />
             <Route path="/use-layout-effect" element={<UseLayoutEffect />} />
+            <Route path="/marubatsu-game" element={<MarubatsuGame />} />
           </Routes>
         </BrowserRouter>
       </div>
@@ -49,6 +51,9 @@ function Top() {
       </Link>
       <Link className={styles.App_link} to="/use-layout-effect">
         useLayoutEffect
+      </Link>
+      <Link className={styles.App_link} to="/marubatsu-game">
+        ○×Game
       </Link>
     </div>
   );
