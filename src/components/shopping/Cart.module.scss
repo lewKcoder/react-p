@@ -1,0 +1,36 @@
+.cart {
+  border: 2px solid #6e6e6e;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 32px;
+  max-height: 125px;
+  overflow: scroll;
+  .ul {
+    padding: 0;
+    list-style: none;
+    .li {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      span {
+        display: inline-block;
+        &.name {
+          font-weight: bold;
+        }
+        &.price {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .amount {
+    .titles {
+      display: flex;
+      justify-content: space-between;
+    }
+    p {
+      text-align: right;
+      margin: 0;
+    }
+  }
+}
