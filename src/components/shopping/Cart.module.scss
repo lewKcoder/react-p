@@ -19,6 +19,11 @@
         }
         &.price {
           font-size: 14px;
+          .button {
+            margin-left: 8px;
+            padding: 0;
+            min-width: 32px;
+          }
         }
       }
     }

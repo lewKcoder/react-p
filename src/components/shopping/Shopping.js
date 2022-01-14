@@ -80,6 +80,10 @@ const cartReducer = (state, action) => {
   switch (action.type) {
     case 'ADD':
       return [...state, { name: action.name, price: action.price }];
+    case 'DELETE':
+      const states = [...state];
+      states.splice(action.index, 1);
+      return states;
     default:
       return;
   }
@@ -89,8 +93,12 @@ function Shopping() {
   const [myCart, dispatch] = useReducer(cartReducer, initialsatate);
   const [amount, setAmount] = useState(0);
 
-  const add = (price) => {
+  const doAdd = (price) => {
     setAmount((prev) => prev + price);
+  };
+
+  const doDelete = (price) => {
+    setAmount((prev) => prev - price);
   };
 
   const item = draItems.map(({ src, alt, name, price, description }) => (
@@ -99,7 +107,7 @@ function Shopping() {
         className={styles.card}
         onClick={() => {
           dispatch({ type: 'ADD', name: name, price: price });
-          add(price);
+          doAdd(price);
         }}
       >
         <CardMedia component="img" height="140" image={src} alt={alt} />
@@ -120,7 +128,7 @@ function Shopping() {
     <div>
       <h1>lets shopping</h1>
       <div className={styles.item_lists}>
-        <Cart myCart={myCart} amount={amount} />
+        <Cart myCart={myCart} amount={amount} dispatch={dispatch} doDelete={doDelete} />
         <Grid container spacing={2}>
           {item}
         </Grid>

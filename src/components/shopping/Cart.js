@@ -1,12 +1,23 @@
 import React from 'react';
 import styles from './Cart.module.scss';
+import { Button } from '@mui/material';
 
-function Cart({ myCart, amount }) {
-  const item = myCart.map(({ name, price }) => (
+function Cart({ myCart, amount, dispatch, doDelete }) {
+  const item = myCart.map(({ name, price }, index) => (
     <li className={styles.li}>
       <span className={styles.name}>{name}</span>
       <span className={styles.price}>
         {new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(price)}
+        <Button
+          variant="outlined"
+          onClick={() => {
+            dispatch({ type: 'DELETE', index: index });
+            doDelete(price);
+          }}
+          className={styles.button}
+        >
+          -
+        </Button>
       </span>
     </li>
   ));
