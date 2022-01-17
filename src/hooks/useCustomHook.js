@@ -21,3 +21,9 @@ export function useCustomJsonHook(s) {
   }, [s]);
   return lists;
 }
+
+export const useInput = (initialValue) => {
+  const [value, setValue] = useState(initialValue.title);
+  const [type, setType] = useState(initialValue.type);
+  return [{ value, type, onChange: (e) => setValue(e.target.value) }, () => setValue(initialValue)];
+};
