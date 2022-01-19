@@ -3,9 +3,14 @@ import { useState, useEffect } from 'react';
 
 function Jscode() {
   const [coin, setCoin] = useState([]);
+  const [name, setName] = useState([]);
+
   useEffect(() => {
     axios.get(`https://api.coindesk.com/v1/bpi/currentprice.json`).then((res) => {
-      setCoin(res.data.chartName);
+      setCoin(res.data);
+      for (const i in coin.bpi) {
+        setName((prev) => [...prev, coin.bpi[i]]);
+      }
     });
   }, []);
 
@@ -69,7 +74,26 @@ function Jscode() {
     .then((res) => res.json())
     .then((data) => console.log(data));
 
-  return <>{coin}</>;
+  return (
+    <>
+      <div>
+        <h4>use axios BitCoin rate</h4>
+        <h5>{coin.time.updated}</h5>
+        <div>
+          <h5>{coin.chartName}</h5>
+          <p>{coin.disclaimer}</p>
+          {name.map((i, index) => (
+            <div key={`${i.code}${index}`}>
+              <h6>
+                {i.code}: <span>{i.rate}</span>
+              </h6>
+              <p>{i.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default Jscode;
