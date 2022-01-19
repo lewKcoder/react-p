@@ -9,7 +9,8 @@ import UseLayoutEffect from './components/useLayoutEffect/UseLayoutEffect';
 import MarubatsuGame from './components/marubatsuGame/MarubatsuGame';
 import Shopping from './components/shopping/Shopping';
 import ExpenseItems from './components/udemy/project1/ExpenseItems';
-import Jsode from "./components/jscode/Jscode"
+import Jsode from './components/jscode/Jscode';
+import UseContext from './components/useContext/UseContext';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
             <Route path="/shopping" element={<Shopping />} />
             <Route path="/udemy-1" element={<ExpenseItems />} />
             <Route path="/jscode" element={<Jsode />} />
+            <Route path="/use-context" element={<UseContext />} />
           </Routes>
         </BrowserRouter>
       </div>
@@ -69,6 +71,9 @@ function Top() {
       </Link>
       <Link className={styles.App_link} to="/jscode">
         jsCode
+      </Link>
+      <Link className={styles.App_link} to="/use-context">
+        useContext
       </Link>
     </div>
   );

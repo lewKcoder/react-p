@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useContext, createContext } from 'react';
 
 export function useCustomNumberHook(e, d) {
   const [customData, setCustomData] = useState(false);
@@ -26,4 +26,14 @@ export const useInput = (initialValue) => {
   const [value, setValue] = useState(initialValue.title);
   const [type, setType] = useState(initialValue.type);
   return [{ value, type, onChange: (e) => setValue(e.target.value) }, () => setValue(initialValue)];
+};
+
+export const useColorPicker = (initialValue) => {
+  const [color, setColor] = useState(initialValue.color);
+  const colorValue = useRef();
+  const selectColor = () => {
+    setColor(colorValue.current.value);
+  };
+
+  return { value: color, ref: colorValue, onChange: () => selectColor() };
 };
