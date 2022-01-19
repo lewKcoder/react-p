@@ -24,10 +24,13 @@ function ExpenseItems() {
     },
   ];
 
-  const expense = expenses.map(({ id, title, amount, date }) => (
-    <ExpenseItem key={id} id={id} title={title} amount={amount} date={date} />
-  ));
-  return <>{expense}</>;
+  const expense = expenses.map((item, i) => <ExpenseItem {...item} key={i} />);
+
+  return (
+    <main className={styles.main}>
+      <section className={styles.expense}>{expense}</section>
+    </main>
+  );
 }
 
 export default ExpenseItems;
