@@ -15,3 +15,5 @@ https://yucatio.hatenablog.com/entry/2018/11/16/102249
 
 - useEffectのちらつきを無くしたいときの対処法【useLayoutEffect】<br>
 https://zenn.dev/syu/articles/6b96e34535b33e
+
+- Reactハンズオンラーニング 第2版 ―Webアプリケーション開発のベストプラクティス 出版社 : オライリージャパン
