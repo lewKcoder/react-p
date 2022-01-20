@@ -1,7 +1,7 @@
-import styles from './ExpenseItem.module.scss';
-import ExpenseItem from './ExpenseItem';
+import styles from './Expense/ExpenseItem.module.scss';
+import ExpenseItem from './Expense/ExpenseItem';
 
-function ExpenseItems() {
+const ExpenseItems = () => {
   const expenses = [
     {
       id: 'e1',
@@ -31,6 +31,6 @@ function ExpenseItems() {
       <section className={styles.expense}>{expense}</section>
     </main>
   );
-}
+};
 
 export default ExpenseItems;
