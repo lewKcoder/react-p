@@ -1,5 +1,6 @@
 import styles from './Expense/ExpenseItem.module.scss';
 import ExpenseItem from './Expense/ExpenseItem';
+import NewExpense from './NewExpense/NewExpense';
 
 const ExpenseItems = () => {
   const expenses = [
@@ -28,6 +29,7 @@ const ExpenseItems = () => {
 
   return (
     <main className={styles.main}>
+      <NewExpense />
       <section className={styles.expense}>{expense}</section>
     </main>
   );
