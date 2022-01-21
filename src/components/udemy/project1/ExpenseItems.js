@@ -1,8 +1,10 @@
 import styles from './Expense/ExpenseItem.module.scss';
 import ExpenseItem from './Expense/ExpenseItem';
 import NewExpense from './NewExpense/NewExpense';
+import Expenses from './Expense/Expenses';
 
 const ExpenseItems = () => {
+  // const [expenses, setExpenses] = useState()
   const expenses = [
     {
       id: 'e1',
@@ -25,12 +27,14 @@ const ExpenseItems = () => {
     },
   ];
 
-  const expense = expenses.map((item, i) => <ExpenseItem {...item} key={i} />);
+  const addExpenseHandler = (expense) => {
+    expenses.push(expense);
+  };
 
   return (
     <main className={styles.main}>
-      <NewExpense />
-      <section className={styles.expense}>{expense}</section>
+      <NewExpense onAddExpense={addExpenseHandler} />
+      <Expenses items={expenses} />
     </main>
   );
 };
