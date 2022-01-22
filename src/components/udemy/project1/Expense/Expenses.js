@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ExpenseList from './ExpenseList';
 import ExpensesFilter from './ExpensesFilter';
 import styles from './Expenses.module.scss';
+import ExpensesChart from './ExpensesChart';
 
 function Expense({ items }) {
   const [filteredYear, setFilteredYear] = useState('2020');
@@ -18,6 +19,7 @@ function Expense({ items }) {
     <>
       <section className={styles.expenses}>
         <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
+        <ExpensesChart expenses={filterExpenses} />
         <ExpenseList items={filterExpenses} />
       </section>
     </>
