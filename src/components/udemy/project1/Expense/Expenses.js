@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ExpenseItem from './ExpenseItem';
+import ExpenseList from './ExpenseList';
 import ExpensesFilter from './ExpensesFilter';
 import styles from './Expenses.module.scss';
 
@@ -9,12 +9,16 @@ function Expense({ items }) {
   const filterChangeHandler = (selectedYear) => {
     setFilteredYear(selectedYear);
   };
-  const expense = items.map((item, i) => <ExpenseItem {...item} key={i} />);
+
+  const filterExpenses = items.filter((expense) => {
+    return expense.date.getFullYear().toString() === filteredYear;
+  });
+
   return (
     <>
       <section className={styles.expenses}>
         <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
-        {expense}
+        <ExpenseList items={filterExpenses} />
       </section>
     </>
   );
