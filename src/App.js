@@ -11,6 +11,7 @@ import Shopping from './components/shopping/Shopping';
 import ExpenseItems from './components/udemy/project1/ExpenseItems';
 import Jsode from './components/jscode/Jscode';
 import UseContext from './components/useContext/UseContext';
+import CourseGoals from './components/udemy/project2/CourseGoals';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
             <Route path="/udemy-1" element={<ExpenseItems />} />
             <Route path="/jscode" element={<Jsode />} />
             <Route path="/use-context" element={<UseContext />} />
+            <Route path="/udemy-2" element={<CourseGoals />} />
           </Routes>
         </BrowserRouter>
       </div>
@@ -74,6 +76,9 @@ function Top() {
       </Link>
       <Link className={styles.App_link} to="/use-context">
         useContext
+      </Link>
+      <Link className={styles.App_link} to="/udemy-2">
+        CourseGoals
       </Link>
     </div>
   );
