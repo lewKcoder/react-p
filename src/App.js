@@ -16,6 +16,74 @@ import User from './components/udemy/project3/User';
 import SideEffect from './components/udemy/project4/SideEffect';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
+const routerList = [
+  {
+    path: '/for-custom-hooks',
+    element: <Lists />,
+    link: 'ForCustomHooks',
+  },
+  {
+    path: '/todo',
+    element: <Todo />,
+    link: 'Todo',
+  },
+  {
+    path: '/use-reducer',
+    element: <UseReducer />,
+    link: 'UseReducer',
+  },
+  {
+    path: '/use-ref',
+    element: <UseRef />,
+    link: 'Useref',
+  },
+  {
+    path: '/use-layout-effect',
+    element: <UseLayoutEffect />,
+    link: 'UseLayoutEffect',
+  },
+  {
+    path: '/marubatsu-game',
+    element: <MarubatsuGame />,
+    link: 'MarubatsuGame',
+  },
+  {
+    path: '/shopping',
+    element: <Shopping />,
+    link: 'Shopping',
+  },
+  {
+    path: '/udemy-1',
+    element: <ExpenseItems />,
+    link: 'udemy1',
+  },
+  {
+    path: '/jscode',
+    element: <Jsode />,
+    link: 'JsCode',
+  },
+  {
+    path: '/use-context',
+    element: <UseContext />,
+    link: 'use-context',
+  },
+  {
+    path: '/udemy-2',
+    element: <CourseGoals />,
+    link: 'udemy2',
+  },
+  {
+    path: '/udemy-3',
+    element: <User />,
+    link: 'udemy3',
+  },
+  {
+    path: '/udemy-4',
+    element: <SideEffect />,
+    link: 'udemy4',
+  },
+];
+
 function App() {
   return (
     <>
@@ -24,19 +92,9 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Top />} />
-            <Route path="/for-custom-hooks" element={<Lists />} />
-            <Route path="/todo" element={<Todo />} />
-            <Route path="/use-reducer" element={<UseReducer />} />
-            <Route path="/use-ref" element={<UseRef />} />
-            <Route path="/use-layout-effect" element={<UseLayoutEffect />} />
-            <Route path="/marubatsu-game" element={<MarubatsuGame />} />
-            <Route path="/shopping" element={<Shopping />} />
-            <Route path="/udemy-1" element={<ExpenseItems />} />
-            <Route path="/jscode" element={<Jsode />} />
-            <Route path="/use-context" element={<UseContext />} />
-            <Route path="/udemy-2" element={<CourseGoals />} />
-            <Route path="/udemy-3" element={<User />} />
-            <Route path="/udemy-4" element={<SideEffect />} />
+            {routerList.map(({ path, element }) => (
+              <Route path={path} element={element} />
+            ))}
           </Routes>
         </BrowserRouter>
       </div>
@@ -51,45 +109,11 @@ function Top() {
     <div className={styles.App_header}>
       <img src={logo} className={styles.App_logo} alt="logo" />
       <p>lets react!!!!</p>
-      <Link className={styles.App_link} to="/for-custom-hooks">
-        custom hooks
-      </Link>
-      <Link className={styles.App_link} to="/todo">
-        todo
-      </Link>
-      <Link className={styles.App_link} to="/use-reducer">
-        useReducer
-      </Link>
-      <Link className={styles.App_link} to="/use-ref">
-        useRef
-      </Link>
-      <Link className={styles.App_link} to="/use-layout-effect">
-        useLayoutEffect
-      </Link>
-      <Link className={styles.App_link} to="/marubatsu-game">
-        ○×Game
-      </Link>
-      <Link className={styles.App_link} to="/shopping">
-        shopping
-      </Link>
-      <Link className={styles.App_link} to="/udemy-1">
-        ExpenseItems
-      </Link>
-      <Link className={styles.App_link} to="/jscode">
-        jsCode
-      </Link>
-      <Link className={styles.App_link} to="/use-context">
-        useContext
-      </Link>
-      <Link className={styles.App_link} to="/udemy-2">
-        CourseGoals
-      </Link>
-      <Link className={styles.App_link} to="/udemy-3">
-        User
-      </Link>
-      <Link className={styles.App_link} to="/udemy-4">
-        SideEffect
-      </Link>
+      {routerList.map(({ path, link }) => (
+        <Link className={styles.App_link} to={path}>
+          {link}
+        </Link>
+      ))}
     </div>
   );
 }
