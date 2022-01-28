@@ -13,6 +13,7 @@ import Jsode from './components/jscode/Jscode';
 import UseContext from './components/useContext/UseContext';
 import CourseGoals from './components/udemy/project2/CourseGoals';
 import User from './components/udemy/project3/User';
+import SideEffect from './components/udemy/project4/SideEffect';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
             <Route path="/use-context" element={<UseContext />} />
             <Route path="/udemy-2" element={<CourseGoals />} />
             <Route path="/udemy-3" element={<User />} />
+            <Route path="/udemy-4" element={<SideEffect />} />
           </Routes>
         </BrowserRouter>
       </div>
@@ -84,6 +86,9 @@ function Top() {
       </Link>
       <Link className={styles.App_link} to="/udemy-3">
         User
+      </Link>
+      <Link className={styles.App_link} to="/udemy-4">
+        SideEffect
       </Link>
     </div>
   );
