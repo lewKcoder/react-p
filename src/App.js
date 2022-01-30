@@ -15,6 +15,7 @@ import CourseGoals from './components/udemy/project2/CourseGoals';
 import User from './components/udemy/project3/User';
 import SideEffect from './components/udemy/project4/SideEffect';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import UseMemo from './components/useMemo/UseMemo';
 
 const routerList = [
   {
@@ -81,6 +82,11 @@ const routerList = [
     path: '/udemy-4',
     element: <SideEffect />,
     link: 'udemy4',
+  },
+  {
+    path: '/use-memo',
+    element: <UseMemo />,
+    link: 'use-memo',
   },
 ];
 
