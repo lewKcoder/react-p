@@ -1,4 +1,4 @@
-import { useLayoutEffect, useEffect, useRef } from 'react';
+import { useLayoutEffect, useEffect, useRef, useState } from 'react';
 import styles from './UseLayoutEffect.module.scss';
 
 // https://zenn.dev/syu/articles/6b96e34535b33e
@@ -12,6 +12,9 @@ import styles from './UseLayoutEffect.module.scss';
 function UseLayoutEffect() {
   const inputRef = useRef(null);
 
+  const [x, setX] = useState(0);
+  const [y, setY] = useState(0);
+
   // 実行してから表示
   useLayoutEffect(() => {
     console.log(inputRef.current.value);
@@ -22,6 +25,15 @@ function UseLayoutEffect() {
     inputRef.current.value = 'HELLO';
     console.log(inputRef.current.value);
   }, []);
+
+  const position = ({ x, y }) => {
+    // console.log(x);
+    // console.log(y);
+  };
+  useLayoutEffect(() => {
+    window.addEventListener('mousemove', position);
+  }, []);
+
   return (
     <div>
       <h1>useLayoutEffect</h1>

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useContext, createContext } from 'react';
+import { useState, useEffect, useRef, useContext, createContext, useMemo } from 'react';
 
 export function useCustomNumberHook(e, d) {
   const [customData, setCustomData] = useState(false);
@@ -37,3 +37,24 @@ export const useColorPicker = (initialValue) => {
 
   return { value: color, ref: colorValue, onChange: () => selectColor() };
 };
+
+// export const useJazzyNews = () => {
+//   const [_posts, setPosts] = useState([]);
+//   const addPost = (post) => setPosts((allPost) => [post, ...addPost]);
+
+//   const posts = useMemo(_posts, [_posts]);
+
+//   useEffect(() => {
+//     newPostChime.play();
+//   }, [posts]);
+
+//   useEffect(() => {
+//     newsFeed.subscribe(addPost);
+//     return () => newsFeed.unsubscribe(addPost);
+//   }, []);
+
+//   useEffect(() => {
+//     welcomeChime.play();
+//     return () => goodbyeChime.play();
+//   }, []);
+// };
