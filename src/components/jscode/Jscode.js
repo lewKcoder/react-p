@@ -74,6 +74,21 @@ function Jscode() {
     .then((res) => res.json())
     .then((data) => data);
 
+  async function myGitAccountInfo() {
+    try {
+      const response = await fetch('https://api.github.com/users/lewKcoder');
+      const userData = await response.json();
+      // console.log(userData);
+      // sessionStorage.setItem('user', JSON.stringify(userData));
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  myGitAccountInfo();
+  // fetch('https://api.github.com/users/lewKcoder')
+  //   .then((res) => res.json())
+  //   .then((data) => console.log(data));
+
   return (
     <>
       <div>
