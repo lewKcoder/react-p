@@ -105,7 +105,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Top />} />
             {routerList.map(({ path, element }) => (
-              <Route path={path} element={element} />
+              <Route key={path} path={path} element={element} />
             ))}
           </Routes>
         </BrowserRouter>
@@ -122,7 +122,7 @@ function Top() {
       <img src={logo} className={styles.App_logo} alt="logo" />
       <p>lets react!!!!</p>
       {routerList.map(({ path, link }) => (
-        <Link className={styles.App_link} to={path}>
+        <Link key={path} className={styles.App_link} to={path}>
           {link}
         </Link>
       ))}
