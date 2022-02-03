@@ -16,6 +16,7 @@ import User from './components/udemy/project3/User';
 import SideEffect from './components/udemy/project4/SideEffect';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import UseMemo from './components/useMemo/UseMemo';
+import PRedux from './components/p-redux/PRedux';
 
 const routerList = [
   {
@@ -87,6 +88,11 @@ const routerList = [
     path: '/use-memo',
     element: <UseMemo />,
     link: 'use-memo',
+  },
+  {
+    path: '/p-redux',
+    element: <PRedux />,
+    link: 'p-redux',
   },
 ];
 
