@@ -17,6 +17,7 @@ import SideEffect from './components/udemy/project4/SideEffect';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import UseMemo from './components/useMemo/UseMemo';
 import PRedux from './components/p-redux/PRedux';
+import Effect from './components/effect/Effect';
 
 const routerList = [
   {
@@ -93,6 +94,11 @@ const routerList = [
     path: '/p-redux',
     element: <PRedux />,
     link: 'p-redux',
+  },
+  {
+    path: '/effect',
+    element: <Effect />,
+    link: 'effect',
   },
 ];
 

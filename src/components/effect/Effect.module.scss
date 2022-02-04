@@ -1,0 +1,51 @@
+@keyframes arrow {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.line {
+  width: 16px;
+  background-color: black;
+  height: 2px;
+  border-radius: 8px;
+  margin: auto;
+  position: relative;
+  &::before,
+  &::after {
+    content: '';
+    width: 10px;
+    background-color: black;
+    height: 2px;
+    border-radius: 8px;
+    display: block;
+    position: absolute;
+    right: -2px;
+  }
+  &::before {
+    transform: rotate(45deg);
+    top: -3px;
+  }
+  &::after {
+    transform: rotate(-45deg);
+    bottom: -3px;
+  }
+}
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  > div {
+    padding: 16px 0;
+  }
+}
+.hover_arrow {
+  .arrow {
+    animation: 2s arrow linear infinite;
+  }
+}
