@@ -1,0 +1,20 @@
+@mixin button($Color: #fff, $BackgroundColor: #143038) {
+  color: $Color;
+  background-color: $BackgroundColor;
+  width: 50px;
+  height: 50px;
+  font-weight: bold;
+  margin: 4px;
+  border: none;
+}
+@function color() {
+}
+
+button {
+  @include button;
+}
+@for $i from 1 to 33 {
+  .button#{$i} {
+    background-color: rgb(20 + $i * 6, 48 + $i * 6, 56 + $i * 6);
+  }
+}

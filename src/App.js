@@ -18,6 +18,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import UseMemo from './components/useMemo/UseMemo';
 import PRedux from './components/p-redux/PRedux';
 import Effect from './components/effect/Effect';
+import PSCSS from './components/p-scss/PSCSS';
 
 const routerList = [
   {
@@ -99,6 +100,11 @@ const routerList = [
     path: '/effect',
     element: <Effect />,
     link: 'effect',
+  },
+  {
+    path: '/p-scss',
+    element: <PSCSS />,
+    link: 'p-scss',
   },
 ];
 
