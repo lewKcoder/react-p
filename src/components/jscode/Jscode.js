@@ -78,7 +78,6 @@ function Jscode() {
     try {
       const response = await fetch('https://api.github.com/users/lewKcoder');
       const userData = await response.json();
-      // console.log(userData);
       // sessionStorage.setItem('user', JSON.stringify(userData));
     } catch (error) {
       console.log(error);
