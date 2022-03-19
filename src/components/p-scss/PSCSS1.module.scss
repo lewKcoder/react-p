@@ -10,9 +10,9 @@
 @function color() {
 }
 
-button {
-  @include button;
-}
+// button {
+//   @include button;
+// }
 @for $i from 1 to 33 {
   .button#{$i} {
     background-color: rgb(20 + $i * 6, 48 + $i * 6, 56 + $i * 6);

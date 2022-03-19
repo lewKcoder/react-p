@@ -19,7 +19,8 @@ import UseMemo from './components/useMemo/UseMemo';
 import PRedux from './components/p-redux/PRedux';
 import Effect from './components/effect/Effect';
 import PSCSS from './components/p-scss/PSCSS';
-import VirtualizedList from './components/virtualizedlist/VirtualizedList';
+import Sample from './components/sample/Sample';
+// import VirtualizedList from './components/virtualizedlist/VirtualizedList';
 
 const routerList = [
   {
@@ -108,10 +109,15 @@ const routerList = [
     link: 'p-scss',
   },
   {
-    path: '/virtualizedlist',
-    element: <VirtualizedList />,
-    link: 'virtualizedlist',
+    path: 'sample',
+    element: <Sample />,
+    link: 'sample',
   },
+  // {
+  //   path: '/virtualizedlist',
+  //   element: <VirtualizedList />,
+  //   link: 'virtualizedlist',
+  // },
 ];
 
 function App() {
