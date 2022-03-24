@@ -8,7 +8,7 @@ function React18Comparison() {
 
   function clickHander() {
     console.log('----click----');
-    new Promise((resolve) => setTimeout(resolve, 100)).then((res) => {
+    fetchSomething().then((res) => {
       setPref(Math.random);
       setCount((c) => c + 1);
       setDate((d) => new Date().toLocaleString());
@@ -28,11 +28,15 @@ function React18Comparison() {
   );
 }
 
+function fetchSomething() {
+  return new Promise((resolve) => setTimeout(resolve, 100));
+}
+
 function LogCheck() {
   useLayoutEffect(() => {
-    console.log('描画するよ');
+    console.log('Painting');
   });
-  console.log('レンダリングするよ');
+  console.log('Render');
   return null;
 }
 
