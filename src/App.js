@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import styles from './App.module.scss';
+import { RecoilRoot } from 'recoil';
 import Header from './components//commons/Header/Header';
 import Lists from './components/for-custom-hooks/Lists/Lists';
 import Todo from './components/todo/Todo/Todo';
@@ -21,6 +22,7 @@ import Effect from './components/effect/Effect';
 import PSCSS from './components/p-scss/PSCSS';
 import VirtualizedList from './components/virtualizedlist/VirtualizedList';
 import React18Comparison from './components/react18comparison/React18Comparison';
+import PRecoil from './components/p-recoil/PRecoil'
 
 const routerList = [
   {
@@ -118,11 +120,16 @@ const routerList = [
     element: <React18Comparison />,
     link: 'react18comparison',
   },
+  {
+    path: '/p-recoil',
+    element: <PRecoil />,
+    link: 'p-recoil',
+  },
 ];
 
 function App() {
   return (
-    <>
+    <RecoilRoot>
       <div className={styles.App}>
         <BrowserRouter>
           <Header />
@@ -134,7 +141,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </div>
-    </>
+    </RecoilRoot>
   );
 }
 
