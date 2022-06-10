@@ -1,4 +1,4 @@
-import { atom, selector } from 'recoil';
+import { atom } from 'recoil';
 
 export const textState = atom({
   key: 'textState',
@@ -10,10 +10,7 @@ export const todoListState = atom({
   default: [],
 });
 
-export const charCountState = selector({
-  key: 'charCountState',
-  get: ({ get }) => {
-    const text = get(textState);
-    return text.length;
-  },
+export const todoListFilterState = atom({
+  key: 'TodoListFilter',
+  default: 'Show All',
 });
